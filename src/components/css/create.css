@@ -1,0 +1,23 @@
+.mapping
+{
+    display: grid;
+    grid-template-columns: auto;
+    margin-left: 0%;
+}
+.mapping-blogs
+{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@media screen and ( min-width:800px)
+{
+    .mapping-blogs
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mapping
+    {
+        grid-template-columns: 60% 40%;
+    }
+    
+}
