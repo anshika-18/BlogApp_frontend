@@ -32,12 +32,12 @@ class CreateBlog extends Component {
             }
         }
 
-        axios.get('http://localhost:5000/api/auth/user',config)
+        axios.get('https://blogapp-backend-anshika.herokuapp.com/api/auth/user',config)
             .then(user=>{
                 console.log(user.data)
                 this.setState({user:user.data})
 
-                axios.get(`http://localhost:5000/blog/${id}`)
+                axios.get(`https://blogapp-backend-anshika.herokuapp.com/blog/${id}`)
                     .then(res=>{
                         console.log(res.data);
                         if(res.data)
@@ -87,7 +87,7 @@ class CreateBlog extends Component {
         try
         {
             this.setState({isLoading:true})
-            const res=await axios.put(`http://localhost:5000/update/${id}`,this.state.blogPost)
+            const res=await axios.put(`https://blogapp-backend-anshika.herokuapp.com/update/${id}`,this.state.blogPost)
             
             if(res.data)
             {

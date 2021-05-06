@@ -21,7 +21,7 @@ export default class singleBlog extends Component {
         }
         console.log(this.props.match.params.id)
         const id=this.props.match.params.id
-        axios.get(`http://localhost:5000/blog/${id}`,config)
+        axios.get(`https://blogapp-backend-anshika.herokuapp.com/blog/${id}`,config)
             .then((blog)=>{
                 
                 this.setState({blog:blog.data})
@@ -35,12 +35,12 @@ export default class singleBlog extends Component {
                 'x-auth-token':localStorage.getItem('token')
             }
         }
-        axios.get("http://localhost:5000/api/auth/user",config)
+        axios.get("https://blogapp-backend-anshika.herokuapp.com/api/auth/user",config)
             .then(user=>{
                 this.setState({user:user.data})
                 if(this.state.user)
                 {
-                    axios.get(`http://localhost:5000/blog/${id}`)
+                    axios.get(`https://blogapp-backend-anshika.herokuapp.com/blog/${id}`)
                         .then(blog=>{
                             this.setState({blog:blog})
                         })
@@ -49,7 +49,7 @@ export default class singleBlog extends Component {
                         })
                     if(this.state.user.email===this.state.blog.email)
                     {
-                        axios.delete(`http://localhost:5000/api/blog/${id}`)
+                        axios.delete(`https://blogapp-backend-anshika.herokuapp.com/api/blog/${id}`)
                             .then(res=>{
                                 console.log(res.data)
                                 this.props.history.push('/myblogs')

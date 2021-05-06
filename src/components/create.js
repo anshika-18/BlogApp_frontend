@@ -33,7 +33,7 @@ class CreateBlog extends Component{
         }
 
         this.setState({isLoading:true})
-            axios.get('http://localhost:5000/api/auth/user',config)
+            axios.get('https://blogapp-backend-anshika.herokuapp.com/api/auth/user',config)
                 .then(user=>{
                     console.log(user)
                     const blogPost={
@@ -42,7 +42,7 @@ class CreateBlog extends Component{
                         description:this.state.desc,
                         email:user.data.email
                     }
-                    axios.post('http://localhost:5000/api/blog/create',blogPost)
+                    axios.post('https://blogapp-backend-anshika.herokuapp.com/api/blog/create',blogPost)
                         .then(res=>{
                             console.log(res.data)
                             window.alert("Blog created")

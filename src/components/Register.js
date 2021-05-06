@@ -41,7 +41,7 @@ class RegisterModal extends Component{
             email:this.state.email,
             password:this.state.password
         }
-        axios.post('http://localhost:5000/api/users',user)
+        axios.post('https://blogapp-backend-anshika.herokuapp.com/api/users',user)
             .then(res=>{
                 console.log(res.data)
                 localStorage.setItem('token',res.data.token)

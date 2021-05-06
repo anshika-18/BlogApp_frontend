@@ -24,7 +24,7 @@ export default class MyBlog extends Component {
           'x-auth-token':token
         }
         }
-        axios.get('http://localhost:5000/api/blog',config)
+        axios.get('https://blogapp-backend-anshika.herokuapp.com/api/blog',config)
         .then(res=>{
           console.log(res.data.data)
           this.setState({blogs:res.data.data})

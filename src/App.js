@@ -26,7 +26,7 @@ class App extends Component{
           'x-auth-token':token
         }
       }
-      axios.get('http://localhost:5000/api/auth/user',config)
+      axios.get('https://blogapp-backend-anshika.herokuapp.com/api/auth/user',config)
         .then(user=>{
           //console.log(user.data.name)
           this.handleAuthentication(true)

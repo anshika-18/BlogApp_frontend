@@ -16,7 +16,7 @@ class Main extends Component{
     }
     componentDidMount()
     {
-        axios.get('http://localhost:5000/api/blogs')
+        axios.get('https://blogapp-backend-anshika.herokuapp.com/api/blogs')
             .then(res=>{
                 console.log(res.data)
                 this.setState({blogs:res.data})

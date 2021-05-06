@@ -40,9 +40,10 @@ class Login extends Component{
             email:this.state.email,
             password:this.state.password
         }
-        axios.post('http://localhost:5000/api/auth',userLogin)
+        
+        axios.post('https://blogapp-backend-anshika.herokuapp.com/api/auth',userLogin)
             .then(user=>{
-                //console.log(user.data.user.email)
+                console.log(user.data.user)
                 this.props.setEmail(user.data.user.email)
                 localStorage.setItem('token',user.data.token)
                 this.props.handleAuthentication(true)
@@ -50,12 +51,13 @@ class Login extends Component{
                 this.props.setToken(user.data.token)
                 
                 this.toggle()
+                window.location.reload();
             })
             .catch(err=>{
                 console.log(err.response.data)
                 this.setState({msg:err.response.data.msg})
             })
-        window.location.reload();
+       
     }
 
     render()
