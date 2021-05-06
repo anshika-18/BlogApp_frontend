@@ -24,7 +24,7 @@ class CreateBlog extends Component{
         })
     }
 
-     postBlog=(e)=>{
+     postBlog=()=>{
 
         const config={
             headers:{
@@ -46,7 +46,7 @@ class CreateBlog extends Component{
                         .then(res=>{
                             console.log(res.data)
                             window.alert("Blog created")
-                            window.location.reload()
+                            //window.location.reload()
                         })
                         .catch(err=>console.log(err.response.data))
                 })
@@ -57,6 +57,7 @@ class CreateBlog extends Component{
     
    
     onSubmit=(e)=>{
+        e.preventDefault()
         if(this.state.title.trim()==="")
         {
             window.alert("title field is empty. Please enter the title of your blog");
