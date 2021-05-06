@@ -46,11 +46,12 @@ class CreateBlog extends Component{
                         .then(res=>{
                             console.log(res.data)
                             window.alert("Blog created")
+                            window.location.reload()
                         })
                         .catch(err=>console.log(err.response.data))
                 })
             this.setState({isLoading:false})
-            window.location.reload()
+    
     }
 
     
